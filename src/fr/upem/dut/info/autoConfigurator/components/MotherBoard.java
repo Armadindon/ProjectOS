@@ -52,6 +52,14 @@ public class MotherBoard {
 		return false;
 	}
 	
+	public Card getCard(int i) {
+		return installedCards.get(i);
+	}
+	
+	public boolean haveCards() {
+		return installedCards.size() != 0;
+	}
+	
 	public void printCards() {
 		installedCards.forEach(c->System.out.println(installedCards.indexOf(c)+" - "+c+" (Irq: "+irqs.get(c)+")."));
 	}

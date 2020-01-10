@@ -74,6 +74,7 @@ public class Computer {
 			}else {
 				if(command.equals("help")) {
 					System.out.println("-addCard\n"+
+										"-rmCard\n"+
 										"-poweron");
 				}else if(command.equals("poweron")){
 					System.out.println("boot of your system !");
@@ -89,6 +90,15 @@ public class Computer {
 					while(scanner.hasNext()) {
 						if(scanner.hasNextInt()) {
 							mb.addCard(Shop.getCard(scanner.nextInt()));
+							break;
+						}
+					}
+				}else if(command.equals("rmCard")) {
+					mb.printCards();
+					while(scanner.hasNext()) {
+						if(!mb.haveCards()) break;
+						if(scanner.hasNextInt()) {
+							mb.removeCard(mb.getCard(scanner.nextInt()));
 							break;
 						}
 					}
